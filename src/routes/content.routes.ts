@@ -4,8 +4,8 @@ import { getAllContents, createContent, getContentsByCategory, getContentById, u
 const router = express.Router();
 
 router.get("/", getAllContents);
-router.get("/", getContentById);    
-router.get("/:category", getContentsByCategory);
+router.get("/:id", getContentById);    
+router.get("/category/:category", getContentsByCategory);
 
 router.post("/", createContent); 
 router.put("/:id", updateContentById); 
