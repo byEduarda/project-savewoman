@@ -28,7 +28,7 @@ export const chatWithAI = async (req: Request, res: Response) => {
     if (isCrisis) {
       return res.status(200).json({
         reply:
-          "Sinto muito que você esteja passando por algo tão difícil. É importante não enfrentar isso sozinha. Você pode buscar ajuda ligando para 188 (CVV) ou 180 (Central de Atendimento à Mulher). Se possível, procure também um profissional de saúde mental — você merece cuidado e escuta."
+          "Parece que você está em uma situação de risco! Sinto muito que você esteja passando por algo tão difícil. É importante não enfrentar isso sozinha. Busque ajuda ligando para 188 (CVV) ou 180 (Central de Atendimento à Mulher). Se possível, procure também um profissional de saúde mental — você merece cuidado e escuta."
       });
     }
 
@@ -42,7 +42,7 @@ export const chatWithAI = async (req: Request, res: Response) => {
           {
             parts: [
               {
-                text: `Você é um assistente que ajuda com dúvidas emocionais, segurança e relacionamentos. Sempre sugira ajuda profissional quando necessário.\n\nUsuário: ${message}`,
+                text: `Você é um assistente que ajuda com dúvidas emocionais, segurança e relacionamentos e saúde mental/emocional. Sempre sugira ajuda profissional quando necessário.\n\nUsuário: ${message}`,
               },
             ],
           },
