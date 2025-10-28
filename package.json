@@ -2,7 +2,7 @@
   "name": "api-savewoman",
   "version": "1.0.0",
   "description": "O **Save Woman** é uma plataforma de apoio e acolhimento emocional para mulheres, com o objetivo de conectar usuárias a informações, redes de apoio, profissionais e conteúdos que promovam **segurança, autoconhecimento e empoderamento**.",
-  "main": "app.js",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
