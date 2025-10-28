@@ -58,6 +58,6 @@ export const chatWithAI = async (req: Request, res: Response) => {
     res.status(200).json({ reply: aiReply });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Erro ao processar a mensagem.", error });
+    res.status(500).json({ message: "Erro ao processar a mensagem." });
   }
 };

@@ -5,8 +5,8 @@ export const createContent = async (req: Request, res: Response) => {
   try {
     const content = await Content.create(req.body);
     res.status(201).json({ content, message: 'Conteúdo criado com sucesso!' });
-  } catch (err) {
-    res.status(500).json({ message: 'Erro ao criar conteúdo', error: err });
+  } catch (err: any) {
+    res.status(500).json({ message: 'Erro ao criar conteúdo'});
   }
 };
 
@@ -15,7 +15,7 @@ export const getAllContents = async (req: Request, res: Response) => {
     const content = await Content.find();
     res.status(200).json({ content, message: 'Conteúdos listados com sucesso!' });
   } catch (err) {
-    res.status(500).json({ message: 'Erro ao listar conteúdos', error: err });
+    res.status(500).json({ message: 'Erro ao listar conteúdos'});
   }
 };
 
@@ -25,7 +25,7 @@ export const getContentById = async (req: Request, res: Response) => {
     if (!content) return res.status(404).json({ message: 'Conteúdo não encontrado' });
     res.status(200).json({ content, message: 'Conteúdo encontrado' });
   } catch (err) {
-    res.status(500).json({ message: 'Erro ao buscar conteúdo', error: err });
+    res.status(500).json({ message: 'Erro ao buscar conteúdo'});
   }
 };
 
@@ -43,7 +43,7 @@ export const updateContent = async (req: Request, res: Response) => {
     const content = await Content.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.status(200).json({ content, message: 'Conteúdo atualizado com sucesso' });
   } catch (err) {
-    res.status(500).json({ message: 'Erro ao atualizar conteúdo', error: err });
+    res.status(500).json({ message: 'Erro ao atualizar conteúdo' });
   }
 };
 
@@ -52,6 +52,6 @@ export const deleteContent = async (req: Request, res: Response) => {
     await Content.findByIdAndDelete(req.params.id);
     res.status(200).json({ message: 'Conteúdo removido com sucesso' });
   } catch (err) {
-    res.status(500).json({ message: 'Erro ao deletar conteúdo', error: err });
+    res.status(500).json({ message: 'Erro ao deletar conteúdo' });
   }
 };
