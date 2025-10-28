@@ -1,14 +1,14 @@
 import express from "express";
-import { getInstitutions, createInstitution, getInstitutionById, deleteInstitutionById, updateInstitutionById, getInstitutionByCity } from "../controllers/institution.controller";
+import { getAllInstitutions, createInstitution, getInstitutionById, deleteInstitution, updateInstitution, getInstitutionsByCity } from "../controllers/institution.controller";
 
 const router = express.Router();
 
-router.get("/", getInstitutions);
+router.get("/", getAllInstitutions);
 router.get("/:id", getInstitutionById);
-router.get("/city/:city", getInstitutionByCity);
+router.get("/city/:city", getInstitutionsByCity);
 
 router.post("/", createInstitution);
-router.put("/:id", updateInstitutionById);
-router.delete("/:id", deleteInstitutionById);
+router.put("/:id", updateInstitution);
+router.delete("/:id", deleteInstitution);
 
 export default router;
