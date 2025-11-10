@@ -4,6 +4,7 @@ import cors from "cors";
 import chatRoutes from "./routes/chat.routes";
 import institutionRoutes from "./routes/institution.routes";
 import contentRoutes from "./routes/content.routes";
+import contactRoutes from "./routes/contact.routes";
 
 const app = express();
 
@@ -15,6 +16,6 @@ app.get("/", (req, res) => res.send("🌸Save Woman no ar!"));
 app.use("/contents", contentRoutes);
 app.use("/institutions", institutionRoutes);
 app.use("/chat", chatRoutes);
-
+app.use("/contacts", contactRoutes);
 
 export default app;
